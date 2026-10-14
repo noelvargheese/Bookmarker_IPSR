@@ -1,17 +1,20 @@
 :root {
   color-scheme: light;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  color: #20251f;
-  background: #f5f4ef;
+  color: var(--ink);
+  background: #f4f5f8;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
-  --ink: #20251f;
-  --muted: #5f675f;
-  --paper: #fffefa;
-  --line: #e5e3dc;
-  --green: #3f6548;
-  --green-dark: #2f5038;
-  --orange: #bb573b;
+  --ink: #1c263b;
+  --muted: #596477;
+  --paper: #fffdfa;
+  --line: #e2e5eb;
+  --navy: #314b7e;
+  --navy-dark: #243b68;
+  --navy-soft: #edf1f8;
+  --amber: #a96524;
+  --amber-soft: #fbf1e3;
+  --danger: #aa4434;
 }
 
 * {
@@ -23,8 +26,8 @@ body {
   min-height: 100vh;
   margin: 0;
   background:
-    radial-gradient(ellipse at 85% 4%, rgba(221, 227, 208, 0.42), transparent 30rem),
-    #f5f4ef;
+    radial-gradient(ellipse at 85% 4%, rgba(218, 226, 241, 0.62), transparent 30rem),
+    #f4f5f8;
 }
 
 button,
@@ -46,7 +49,7 @@ select {
 
 .eyebrow {
   margin: 0 0 10px;
-  color: var(--green);
+  color: var(--navy);
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.15em;
@@ -89,10 +92,10 @@ h1 {
 
 .book-form,
 .book-shelf {
-  border: 1px solid rgba(32, 37, 31, 0.09);
+  border: 1px solid rgba(28, 38, 59, 0.09);
   border-radius: 20px;
   background: var(--paper);
-  box-shadow: 0 12px 32px rgba(42, 45, 37, 0.055);
+  box-shadow: 0 12px 32px rgba(28, 38, 59, 0.055);
 }
 
 .book-form {
@@ -119,7 +122,7 @@ h1 {
 
 .form-field label span,
 .required-note span {
-  color: var(--orange);
+  color: var(--amber);
 }
 
 .form-field input,
@@ -127,7 +130,7 @@ h1 {
   display: block;
   width: 100%;
   min-height: 48px;
-  border: 1px solid #dcded6;
+  border: 1px solid #d9deea;
   border-radius: 9px;
   padding: 10px 12px;
   background: #fff;
@@ -137,24 +140,24 @@ h1 {
 
 .form-field input:focus,
 .form-field select:focus {
-  border-color: var(--green);
+  border-color: var(--navy);
   outline: none;
-  box-shadow: 0 0 0 3px rgba(71, 108, 80, 0.14);
+  box-shadow: 0 0 0 3px rgba(49, 75, 126, 0.16);
 }
 
 .form-field input:focus-visible,
 .form-field select:focus-visible {
-  outline: 3px solid #315b3b;
+  outline: 3px solid var(--navy);
   outline-offset: 2px;
 }
 
 .form-field [aria-invalid="true"] {
-  border-color: var(--orange);
+  border-color: var(--danger);
 }
 
 .field-error {
   margin: 6px 0 0;
-  color: #a53d2b;
+  color: var(--danger);
   font-size: 0.78rem;
   line-height: 1.4;
 }
@@ -166,7 +169,7 @@ h1 {
   border: 0;
   border-radius: 9px;
   padding: 12px 16px;
-  background: var(--green);
+  background: var(--navy);
   color: #fff;
   cursor: pointer;
   font-weight: 700;
@@ -174,7 +177,7 @@ h1 {
 }
 
 .add-button:hover {
-  background: var(--green-dark);
+  background: var(--navy-dark);
 }
 
 .add-button:active {
@@ -182,7 +185,7 @@ h1 {
 }
 
 .add-button:focus-visible {
-  outline: 3px solid #23492d;
+  outline: 3px solid var(--navy-dark);
   outline-offset: 3px;
 }
 
@@ -218,7 +221,7 @@ h1 {
 }
 
 .shelf-mark {
-  color: #9baf88;
+  color: var(--amber);
   font-size: 1.65rem;
   line-height: 1;
 }
@@ -238,13 +241,13 @@ h1 {
   gap: 6px;
   border-radius: 999px;
   padding: 5px 9px;
-  background: #f1f3ed;
+  background: var(--navy-soft);
   color: var(--muted);
   font-size: 0.75rem;
 }
 
 .book-counts strong {
-  color: var(--green-dark);
+  color: var(--navy-dark);
   font-variant-numeric: tabular-nums;
 }
 
@@ -264,7 +267,7 @@ h1 {
   display: block;
   width: 100%;
   min-height: 48px;
-  border: 1px solid #dcded6;
+  border: 1px solid #d9deea;
   border-radius: 9px;
   padding: 10px 12px;
   background: #fff;
@@ -274,13 +277,13 @@ h1 {
 }
 
 .book-search:focus {
-  border-color: var(--green);
+  border-color: var(--navy);
   outline: none;
-  box-shadow: 0 0 0 3px rgba(71, 108, 80, 0.14);
+  box-shadow: 0 0 0 3px rgba(49, 75, 126, 0.16);
 }
 
 .book-search:focus-visible {
-  outline: 3px solid #315b3b;
+  outline: 3px solid var(--navy);
   outline-offset: 2px;
 }
 
@@ -312,7 +315,7 @@ h1 {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 14px;
-  border: 1px solid #eeece5;
+  border: 1px solid #e5e8ef;
   border-radius: 11px;
   padding: 16px;
   background: #fff;
@@ -342,18 +345,18 @@ h1 {
   flex: 0 0 auto;
   min-height: 44px;
   max-width: 132px;
-  border: 1px solid #dce5d8;
+  border: 1px solid #efdcc2;
   border-radius: 999px;
   padding: 6px 10px;
-  background: #edf2e9;
-  color: var(--green-dark);
+  background: var(--amber-soft);
+  color: #785120;
   cursor: pointer;
   font-size: 0.84rem;
   font-weight: 700;
 }
 
 .book-status-control:focus-visible {
-  outline: 3px solid #23492d;
+  outline: 3px solid var(--navy-dark);
   outline-offset: 2px;
 }
 
