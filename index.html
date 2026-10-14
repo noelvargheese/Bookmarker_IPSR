@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f6f4ef">
+    <title>Book Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="page-header">
+        <p class="eyebrow">Your personal library</p>
+        <h1>Book Tracker</h1>
+        <p class="page-intro">Keep a simple list of the books you want to read and the ones you’re enjoying.</p>
+      </header>
+
+      <section class="tracker-layout" aria-label="Book tracker">
+        <form class="book-form" id="book-form" novalidate>
+          <h2>Add a book</h2>
+
+          <div class="form-field">
+            <label for="book-title">Title <span aria-hidden="true">*</span></label>
+            <input
+              id="book-title"
+              name="title"
+              type="text"
+              autocomplete="off"
+              required
+              aria-describedby="title-error"
+            >
+            <p class="field-error" id="title-error" hidden></p>
+          </div>
+
+          <div class="form-field">
+            <label for="book-author">Author <span aria-hidden="true">*</span></label>
+            <input
+              id="book-author"
+              name="author"
+              type="text"
+              autocomplete="off"
+              required
+              aria-describedby="author-error"
+            >
+            <p class="field-error" id="author-error" hidden></p>
+          </div>
+
+          <div class="form-field">
+            <label for="book-status">Status</label>
+            <select id="book-status" name="status">
+              <option value="To read">To read</option>
+              <option value="Reading">Reading</option>
+              <option value="Finished">Finished</option>
+            </select>
+          </div>
+
+          <button class="add-button" type="submit">Add Book</button>
+          <p class="required-note"><span aria-hidden="true">*</span> Required fields</p>
+        </form>
+
+        <section class="book-shelf" aria-labelledby="book-list-heading">
+          <div class="shelf-heading">
+            <div>
+              <p class="eyebrow">In your collection</p>
+              <h2 id="book-list-heading">Your books</h2>
+            </div>
+            <span class="shelf-mark" aria-hidden="true">✳</span>
+          </div>
+
+          <ul class="book-counts" aria-label="Book counts by status" aria-live="polite">
+            <li><span>To read</span><strong id="count-to-read">0</strong></li>
+            <li><span>Reading</span><strong id="count-reading">0</strong></li>
+            <li><span>Finished</span><strong id="count-finished">0</strong></li>
+          </ul>
+
+          <div class="search-field">
+            <label for="book-search">Search by title or author</label>
+            <input
+              class="book-search"
+              id="book-search"
+              name="search"
+              type="search"
+              autocomplete="off"
+              placeholder="Type a title or author"
+            >
+          </div>
+
+          <p class="empty-state" id="empty-state">Your list is empty for now. Add a book to get started.</p>
+          <p class="search-empty-state" id="no-results" hidden>No books match that search. Try a different title or author.</p>
+          <ol class="book-list" id="book-list" aria-live="polite" aria-relevant="additions">
+          </ol>
+        </section>
+      </section>
+    </main>
+  </body>
+</html>
