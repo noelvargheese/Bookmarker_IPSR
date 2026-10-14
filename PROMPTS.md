@@ -1,6 +1,6 @@
 # Conversation Prompts and Results
 
-These are five feature prompts selected from the conversation, followed by the work reported after each. The prompt text is quoted from the user's messages.
+These are five feature prompts from the build process, followed by a summary of the work reported after each.
 
 ## 1. Build the first working version
 
@@ -46,6 +46,5 @@ These are five feature prompts selected from the conversation, followed by the w
 
 ## Documented AI mistake
 
-- **Mistake:** During the first implementation, the assistant briefly added a Google Fonts `@import`, despite the requirement to use no external dependencies.
-- **How it was noticed:** The conversation records the assistant catching this during its own review and removing it before reporting the implementation. It does not say that the user noticed it. **[Fill in if you noticed this separately or had another specific example in mind.]**
-- **Fix:** The import was removed and the stylesheet was changed to use system fonts and Georgia.
+- **Mistake:** An early implementation briefly added a Google Fonts `@import`, despite the requirement to use no external dependencies.
+- **How it was noticed and fixed:** During review, the assistant caught the external font import, removed it, and changed the stylesheet to use system fonts and Georgia.
