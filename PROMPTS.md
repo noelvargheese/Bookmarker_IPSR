@@ -54,3 +54,9 @@ These are five feature prompts from the build process, followed by a summary of 
 > [https://shreya-achamma.github.io/book-tracker/](https://shreya-achamma.github.io/book-tracker/) make it like this
 
 **Result:** Reworked the page into a reading-journey dashboard with book statistics, a library completion meter, reading streaks, a monthly activity calendar, and a reading insight. Kept the existing book list, search, status editing, deletion, and localStorage data.
+
+## 7. Give the app a more original visual design
+
+> Redesign the website so it feels more polished and distinct from the current layout. Keep it as a plain HTML, CSS, and JavaScript app, preserve the book tracker and reading-calendar features, and make the layout work well on phones.
+
+**Result:** Reworked the page as a warm editorial reading room with a custom CSS book illustration, compact progress overview, prominent library, and focused tools sidebar. Kept the existing form, search, status changes, deletion, counts, calendar, and browser storage behavior. Book rows now use the first letter of each title as a small cover mark.
