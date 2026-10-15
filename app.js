@@ -177,7 +177,7 @@ function createBookCard(book) {
   const bookMark = document.createElement('span');
   bookMark.className = 'book-card-mark';
   bookMark.setAttribute('aria-hidden', 'true');
-  bookMark.textContent = '▤';
+  bookMark.textContent = book.title.trim().charAt(0).toLocaleUpperCase();
 
   const details = document.createElement('div');
   details.className = 'book-details';

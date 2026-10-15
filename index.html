@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#f5f6f1">
-    <meta name="description" content="A calm little space to track your books and build a reading habit.">
-    <title>Book Tracker | Your Reading Journey</title>
+    <meta name="theme-color" content="#f5f0e8">
+    <meta name="description" content="A quiet corner to keep your reading list, celebrate finished books, and build a reading habit.">
+    <title>Book Tracker | A Quiet Reading Room</title>
     <link rel="stylesheet" href="style.css">
     <script src="app.js" defer></script>
   </head>
@@ -13,206 +13,177 @@
     <div class="site-header">
       <div class="site-header__inner">
         <a class="brand" href="#top" aria-label="Book Tracker home">
-          <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
-          <span>Book Tracker</span>
+          <span class="brand-mark" aria-hidden="true"><i></i><i></i></span>
+          <span class="brand-name">paper<span>trail</span></span>
         </a>
-        <p class="header-tagline">A little progress every day.</p>
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="#collection-heading">My library</a>
+          <a href="#journey-heading">Reading log</a>
+        </nav>
+        <p class="header-note"><span aria-hidden="true"></span> Saved on this device</p>
       </div>
     </div>
 
     <main class="page-shell" id="top">
-      <header class="page-header">
-        <p class="eyebrow">Your personal library</p>
-        <h1>Your Reading Journey</h1>
-        <p class="page-intro">Keep track of the books you love, the stories you’re exploring, and the reading habits you’re building.</p>
-      </header>
-
-      <section class="panel add-book-section" aria-labelledby="add-book-heading">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">Grow your library</p>
-            <h2 id="add-book-heading">Add a New Book</h2>
-          </div>
-          <span class="section-icon section-icon--green" aria-hidden="true">✍️</span>
+      <section class="hero-banner" aria-labelledby="page-title">
+        <div class="hero-copy">
+          <p class="eyebrow">A home for your next chapter</p>
+          <h1 id="page-title">A quiet corner<br>for <em>big stories.</em></h1>
+          <p class="page-intro">Keep the books you’ve loved, the ones you’re reading, and the stories still waiting on your shelf.</p>
+          <a class="hero-link" href="#add-book-heading">Add to your library <span aria-hidden="true">↗</span></a>
         </div>
-
-        <form class="book-form" id="book-form" novalidate>
-          <div class="form-fields">
-            <div class="form-field">
-              <label for="book-title">Book Title <span aria-hidden="true">*</span></label>
-              <input
-                id="book-title"
-                name="title"
-                type="text"
-                autocomplete="off"
-                placeholder="e.g. Atomic Habits"
-                required
-                aria-describedby="title-error"
-              >
-              <p class="field-error" id="title-error" hidden></p>
-            </div>
-
-            <div class="form-field">
-              <label for="book-author">Author <span aria-hidden="true">*</span></label>
-              <input
-                id="book-author"
-                name="author"
-                type="text"
-                autocomplete="off"
-                placeholder="e.g. James Clear"
-                required
-                aria-describedby="author-error"
-              >
-              <p class="field-error" id="author-error" hidden></p>
-            </div>
-          </div>
-
-          <div class="form-actions-row">
-            <div class="form-field status-field">
-              <label for="book-status">Reading Status</label>
-              <select id="book-status" name="status">
-                <option value="To read">To read</option>
-                <option value="Reading">Reading</option>
-                <option value="Finished">Finished</option>
-              </select>
-            </div>
-            <button class="add-button" type="submit"><span aria-hidden="true">＋</span> Add Book</button>
-          </div>
-          <p class="required-note"><span aria-hidden="true">*</span> Required fields</p>
-        </form>
+        <div class="hero-art" role="img" aria-label="An illustration of a small stack of books on a warm reading-room background">
+          <span class="hero-art__sun"></span>
+          <span class="hero-art__spark hero-art__spark--one">✳</span>
+          <span class="hero-art__spark hero-art__spark--two">✳</span>
+          <div class="hero-book hero-book--back"><span>THE LONG WAY HOME</span></div>
+          <div class="hero-book hero-book--middle"><span>NOTES FROM ELSEWHERE</span></div>
+          <div class="hero-book hero-book--front"><span>little<br>by little</span><i></i></div>
+          <p class="hero-art__caption">Make room for wonder.</p>
+        </div>
       </section>
 
       <section class="stats-section" aria-labelledby="statistics-heading">
-        <div class="section-title-block">
-          <p class="eyebrow">Your progress</p>
-          <h2 class="section-title" id="statistics-heading">Reading Statistics</h2>
+        <div class="overview-heading">
+          <div>
+            <p class="eyebrow">At a glance</p>
+            <h2 id="statistics-heading">Your reading shelf</h2>
+          </div>
+          <p class="overview-note">Every book has its own place in the story.</p>
         </div>
 
         <div class="stats-grid" aria-live="polite">
           <article class="stat-card stat-card--total">
-            <h3>Total Books</h3>
-            <p class="stat-value" id="count-total">0</p>
-            <p class="stat-caption">In your library</p>
+            <span class="stat-symbol" aria-hidden="true">✳</span>
+            <div><p class="stat-label">In your library</p><p class="stat-value" id="count-total">0</p></div>
           </article>
           <article class="stat-card stat-card--to-read">
-            <h3>To Read</h3>
-            <p class="stat-value" id="count-to-read">0</p>
-            <p class="stat-caption">Waiting for you</p>
+            <span class="stat-symbol" aria-hidden="true">○</span>
+            <div><p class="stat-label">To read</p><p class="stat-value" id="count-to-read">0</p></div>
           </article>
           <article class="stat-card stat-card--reading">
-            <h3>Reading</h3>
-            <p class="stat-value" id="count-reading">0</p>
-            <p class="stat-caption">Currently exploring</p>
+            <span class="stat-symbol" aria-hidden="true">◒</span>
+            <div><p class="stat-label">Reading now</p><p class="stat-value" id="count-reading">0</p></div>
           </article>
           <article class="stat-card stat-card--finished">
-            <h3>Finished</h3>
-            <p class="stat-value" id="count-finished">0</p>
-            <p class="stat-caption">Stories completed</p>
+            <span class="stat-symbol" aria-hidden="true">✓</span>
+            <div><p class="stat-label">Finished</p><p class="stat-value" id="count-finished">0</p></div>
           </article>
         </div>
 
         <div class="completion-card">
           <div class="completion-copy">
-            <div>
-              <h3>Library Completion</h3>
-              <p>Percentage of your library marked as finished.</p>
-            </div>
+            <div><h3>Stories completed</h3><p>A little progress is still progress.</p></div>
             <strong id="completion-label">0%</strong>
           </div>
           <progress id="completion-progress" max="100" value="0" aria-label="Percentage of books finished">0%</progress>
         </div>
       </section>
 
-      <section class="panel library-section" aria-labelledby="collection-heading">
-        <div class="library-heading">
-          <div>
-            <p class="eyebrow">All your stories</p>
-            <h2 class="section-title" id="collection-heading">My Library</h2>
-          </div>
-          <p class="book-count-label" id="book-count-label">0 books</p>
-        </div>
-
-        <div class="search-field">
-          <label for="book-search">Search your library</label>
-          <input
-            class="book-search"
-            id="book-search"
-            name="search"
-            type="search"
-            autocomplete="off"
-            placeholder="Search by title or author…"
-          >
-        </div>
-
-        <div class="empty-state" id="empty-state" hidden>
-          <span class="empty-state-icon" aria-hidden="true">📚</span>
-          <h3>Your library is waiting</h3>
-          <p>Add your first book to start building your personal library.</p>
-        </div>
-        <p class="search-empty-state" id="no-results" hidden>No books match that search. Try a different title or author.</p>
-        <ol class="book-list" id="book-list" aria-live="polite" aria-relevant="additions"></ol>
-      </section>
-
-      <section class="panel journey-section" aria-labelledby="journey-heading">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">Build a reading habit</p>
-            <h2 class="section-title" id="journey-heading">Reading Journey</h2>
-            <p class="section-description">Every reading session is a small step forward.</p>
-          </div>
-          <span class="section-icon section-icon--sage" aria-hidden="true">🌱</span>
-        </div>
-
-        <div class="streak-grid" aria-live="polite">
-          <article class="streak-card">
-            <span class="streak-icon" aria-hidden="true">🔥</span>
-            <div><p>Current Streak</p><strong id="current-streak">0</strong><span>days</span></div>
-          </article>
-          <article class="streak-card">
-            <span class="streak-icon" aria-hidden="true">🏆</span>
-            <div><p>Longest Streak</p><strong id="longest-streak">0</strong><span>days</span></div>
-          </article>
-        </div>
-
-        <div class="reading-checkin">
-          <div>
-            <h3>Read something today?</h3>
-            <p>Record a session to mark today as an active reading day.</p>
-          </div>
-          <button class="checkin-button" id="record-session-btn" type="button">
-            <span aria-hidden="true">✓</span> Record Today’s Reading
-          </button>
-        </div>
-        <p class="session-feedback" id="session-feedback" role="status" aria-live="polite" hidden></p>
-
-        <div class="calendar-card">
-          <div class="calendar-heading">
-            <button class="calendar-nav" id="previous-month" type="button" aria-label="Show previous month"><span aria-hidden="true">←</span></button>
-            <h3 id="calendar-month">Month Year</h3>
-            <button class="calendar-nav" id="next-month" type="button" aria-label="Show next month"><span aria-hidden="true">→</span></button>
+      <div class="dashboard-grid">
+        <section class="panel library-section" aria-labelledby="collection-heading">
+          <div class="library-heading">
+            <div>
+              <p class="eyebrow">The good stuff</p>
+              <h2 id="collection-heading">My Library</h2>
+              <p class="section-description">A list of stories, ordered from newest to oldest.</p>
+            </div>
+            <p class="book-count-label" id="book-count-label">0 books</p>
           </div>
 
-          <div class="calendar-weekdays" aria-hidden="true">
-            <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
+          <div class="search-field">
+            <label for="book-search">Find a book</label>
+            <span class="search-icon" aria-hidden="true">⌕</span>
+            <input class="book-search" id="book-search" name="search" type="search" autocomplete="off" placeholder="Search by title or author…">
           </div>
-          <div class="calendar-grid" id="activity-calendar" aria-label="Monthly reading activity calendar"></div>
-          <div class="calendar-footer">
-            <p class="calendar-day-detail" id="calendar-day-detail" aria-live="polite">Select a day to see your reading activity.</p>
-            <p class="calendar-legend"><span aria-hidden="true"></span> Reading session recorded</p>
-          </div>
-        </div>
 
-        <div class="reading-insight">
-          <span aria-hidden="true">💡</span>
-          <div><h3>Your Reading Insight</h3><p id="reading-insight-text">Your reading journey starts with one page. Add a book and record your first reading session!</p></div>
-        </div>
-        <p class="privacy-note">Your reading sessions are based on dates you record manually. Streaks represent recorded activity, not verified reading time.</p>
-      </section>
+          <div class="empty-state" id="empty-state" hidden>
+            <span class="empty-state-icon" aria-hidden="true">✳</span>
+            <h3>Your shelf is a blank page</h3>
+            <p>Add a book you’d like to remember, and it will find a home here.</p>
+            <a href="#add-book-heading">Add your first book <span aria-hidden="true">↗</span></a>
+          </div>
+          <p class="search-empty-state" id="no-results" hidden>No stories found. Try a different title or author.</p>
+          <ol class="book-list" id="book-list" aria-live="polite" aria-relevant="additions"></ol>
+        </section>
+
+        <aside class="side-column" aria-label="Reading tools">
+          <section class="panel add-book-section" aria-labelledby="add-book-heading">
+            <div class="side-heading">
+              <div>
+                <p class="eyebrow">A new arrival</p>
+                <h2 id="add-book-heading">Add a book</h2>
+              </div>
+              <span class="section-icon" aria-hidden="true">＋</span>
+            </div>
+
+            <form class="book-form" id="book-form" novalidate>
+              <div class="form-field">
+                <label for="book-title">Book title <span aria-hidden="true">*</span></label>
+                <input id="book-title" name="title" type="text" autocomplete="off" placeholder="e.g. Atomic Habits" required aria-describedby="title-error">
+                <p class="field-error" id="title-error" hidden></p>
+              </div>
+              <div class="form-field">
+                <label for="book-author">Author <span aria-hidden="true">*</span></label>
+                <input id="book-author" name="author" type="text" autocomplete="off" placeholder="e.g. James Clear" required aria-describedby="author-error">
+                <p class="field-error" id="author-error" hidden></p>
+              </div>
+              <div class="form-field status-field">
+                <label for="book-status">Where are you with it?</label>
+                <select id="book-status" name="status">
+                  <option value="To read">To read</option>
+                  <option value="Reading">Reading</option>
+                  <option value="Finished">Finished</option>
+                </select>
+              </div>
+              <button class="add-button" type="submit"><span aria-hidden="true">＋</span> Add to my library</button>
+              <p class="required-note"><span aria-hidden="true">*</span> Required fields</p>
+            </form>
+          </section>
+
+          <section class="panel journey-section" aria-labelledby="journey-heading">
+            <div class="side-heading journey-title-row">
+              <div>
+                <p class="eyebrow">A page a day</p>
+                <h2 id="journey-heading">Reading rhythm</h2>
+              </div>
+              <span class="section-icon section-icon--sun" aria-hidden="true">☼</span>
+            </div>
+
+            <div class="streak-grid" aria-live="polite">
+              <article class="streak-card"><p>Current streak</p><div><strong id="current-streak">0</strong><span>days</span></div></article>
+              <article class="streak-card"><p>Best streak</p><div><strong id="longest-streak">0</strong><span>days</span></div></article>
+            </div>
+
+            <div class="reading-checkin">
+              <div><h3>Read today?</h3><p>Save a small win to your calendar.</p></div>
+              <button class="checkin-button" id="record-session-btn" type="button"><span aria-hidden="true">✓</span> Record today</button>
+            </div>
+            <p class="session-feedback" id="session-feedback" role="status" aria-live="polite" hidden></p>
+
+            <div class="calendar-card">
+              <div class="calendar-heading">
+                <button class="calendar-nav" id="previous-month" type="button" aria-label="Show previous month"><span aria-hidden="true">←</span></button>
+                <h3 id="calendar-month">Month Year</h3>
+                <button class="calendar-nav" id="next-month" type="button" aria-label="Show next month"><span aria-hidden="true">→</span></button>
+              </div>
+              <div class="calendar-weekdays" aria-hidden="true"><span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span></div>
+              <div class="calendar-grid" id="activity-calendar" aria-label="Monthly reading activity calendar"></div>
+              <div class="calendar-footer">
+                <p class="calendar-day-detail" id="calendar-day-detail" aria-live="polite">Select a day to see your reading activity.</p>
+                <p class="calendar-legend"><span aria-hidden="true"></span> Read</p>
+              </div>
+            </div>
+
+            <div class="reading-insight"><span aria-hidden="true">✦</span><div><h3>A little note</h3><p id="reading-insight-text">Your reading journey starts with one page. Add a book and record your first reading session!</p></div></div>
+            <p class="privacy-note">Your books and reading sessions are saved in this browser only.</p>
+          </section>
+        </aside>
+      </div>
     </main>
 
     <footer class="site-footer">
-      <p>Made for readers, one page at a time. <span aria-hidden="true">📚</span></p>
-      <p>Your books and reading sessions are saved in this browser. They are not automatically synchronized across devices.</p>
+      <p><span class="footer-mark" aria-hidden="true">✳</span> papertrail <span class="footer-divider">·</span> a quieter way to keep your stories close</p>
     </footer>
   </body>
 </html>
