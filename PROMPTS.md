@@ -48,3 +48,9 @@ These are five feature prompts from the build process, followed by a summary of 
 
 - **Mistake:** An early implementation briefly added a Google Fonts `@import`, despite the requirement to use no external dependencies.
 - **How it was noticed and fixed:** During review, the assistant caught the external font import, removed it, and changed the stylesheet to use system fonts and Georgia.
+
+## 6. Match a reading journey reference
+
+> [https://shreya-achamma.github.io/book-tracker/](https://shreya-achamma.github.io/book-tracker/) make it like this
+
+**Result:** Reworked the page into a reading-journey dashboard with book statistics, a library completion meter, reading streaks, a monthly activity calendar, and a reading insight. Kept the existing book list, search, status editing, deletion, and localStorage data.
